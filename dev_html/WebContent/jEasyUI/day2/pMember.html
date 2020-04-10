@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>member</title>
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+	
+</head>
+<body>
+<table id="member"></table>
+<div id="sel" class="easyui-dialog"></div>
+<div id="ins" class="easyui-dialog"></div>
+<div id="upd" class="easyui-dialog"></div>
+<div id="del" class="easyui-dialog"></div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#member").datagrid({
+			url:"../../json/dept.json"
+			,title:"회원관리"
+			,columns:[[
+				{field:'loc',title:'지역'},
+				{field:'dname',title:'부서명'}
+				]]
+			,toolbar:[{
+				iconCls:'icon-search'
+				,handler:function(){$("#sel").dialog('open')}
+				,text:'조회'
+			},'-',{
+				iconCls:'icon-add'
+					,handler:function(){$("#ins").dialog('open')}
+					,text:'입력'
+			},'-',{
+				iconCls:'icon-edit'
+					,handler:function(){$("#upd").dialog('open')}
+					,text:'수정'
+			},'-',{
+				iconCls:'icon-remove'
+					,handler:function(){$("#del").dialog('open')}
+					,text:'삭제'
+				}]
+		
+		});
+		$("#sel").dialog({
+			closed:true
+			,width:400
+			,height:400
+			,title:'조회창'
+			,buttons:[{
+				text:'저장'
+				,href:'memberMGR.html'
+
+
+			},{
+				text:'닫기'
+					,handler:function(){$("#sel").dialog('close')}
+				}]
+		});
+		$("#ins").dialog({
+			closed:true
+			,width:400
+			,height:400
+			,title:'입력창'
+			,buttons:[{
+				text:'닫기'
+				,handler:function(){$("#sel").dialog('close')}
+			}]
+		});
+		$("#upd").dialog({
+			closed:true
+			,width:400
+			,height:400
+			,title:'수정창'
+			,buttons:[{
+				text:'닫기'
+				,handler:function(){$("#sel").dialog('close')}
+			}]
+		});
+		$("#del").dialog({
+			closed:true
+			,width:400
+			,height:400
+			,title:'삭제창'
+			,buttons:[{
+				text:'닫기'
+				,handler:function(){$("#sel").dialog('close')}
+			}]
+		});
+		
+	});
+
+</script>
+</body>
+</html>

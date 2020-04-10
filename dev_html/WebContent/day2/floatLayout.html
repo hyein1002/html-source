@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>floatLayout.html[float 속성을 이용한 레이아웃]</title>
+<style type="text/css">
+	#header{
+		width:950px; height:80px;
+		background-color: #008080;
+		padding-top: 1px;	
+		}
+	#navigation{
+		font-style: liu jian mao cao;
+		width:950px; height:50px;
+		background-color: #add8e6;
+		}
+	#wrap{
+		overflow:hidden;
+		margin-top:20px;
+		width:950px; height:450px;
+		background-color: white;
+		} 
+	.float{
+		float:left;
+	} 
+	
+	#aside{
+		margin-right:20px;
+		width:190px; height:450px;
+		background-color: #b0c4de;
+		padding-top: 175px;
+		
+
+
+		}
+	#section{
+		width:740px; height:450px;
+		background-color: #20b2aa;
+		padding-top: 175px;
+		
+		}
+	#footer{
+		width:950px; height:50px;
+		background-color: #afeeee;
+		}
+
+</style>
+</head>
+<body>
+
+	<div id="header" align="center" ><h1 >Header</h1></div>
+	<div id="navigation"><h1  align="center">Navigation</h1></div>
+	<div id="wrap" >
+	<div id="aside" class="float" >
+		<h1 align="center">Aside</h1>
+		</div>
+		<div id="section" class="float">
+		<h1 align="center">Section</h1>
+		</div>
+	</div>
+	<div id="footer"><h1 align="center">Footer</h1></div>
+
+</body>
+</html>

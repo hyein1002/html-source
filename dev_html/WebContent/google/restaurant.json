@@ -1,0 +1,44 @@
+[
+	{
+	lng: 126.876783,
+	res_photo: "2.png",
+	res_name: "팔람까오",
+	lat: 37.479521
+	},
+	{
+	lng: 126.882484,
+	res_photo: "chicken.jpg",
+	res_name: "둘둘치킨",
+	lat: 37.479962
+	},
+	{
+	lng: 126.882839,
+	res_photo: "shin_tang.jpg",
+	res_name: "신촌설렁탕",
+	lat: 37.479526
+	},
+	{
+	lng: 126.879315,
+	res_photo: "3.png",
+	res_name: "공단칼국수",
+	lat: 37.480509
+	},
+	{
+	lng: 126.881541,
+	res_photo: "4.png",
+	res_name: "예원가산점",
+	lat: 37.47835
+	},
+	{
+	lng: 126.881076,
+	res_photo: "5.png",
+	res_name: "미각",
+	lat: 37.479042
+	},
+	{
+	lng: 126.881863,
+	res_photo: "6.png",
+	res_name: "동남집",
+	lat: 37.478977
+	}
+]

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>onload 이벤트 활용</title>
+</head>
+<body>
+<!--  
+	dom이 먼저야? 이벤트처리가 먼저야? => dom이 먼저
+-->
+<script type="text/javascript">
+	/* before에다 놨지만 h1태그가 호출됨.  */
+	window.onload = function(){//익명함수-한번만 사용할수있다.
+		//이벤트 연결하기-블락(면이 있다)이어서 이벤트를 걸수있다.
+		var header = document.getElementById("header");
+		header.onclick = function(){
+			alert("클릭~~~~");
+			//이벤트를 제거합니다.
+			header.onclick=null;//자원반납하기-버블링 발생 방지
+		}
+	};
+</script>
+	<h1 id="header">Click</h1>
+
+</body>
+</html>

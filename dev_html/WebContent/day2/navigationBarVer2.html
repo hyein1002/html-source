@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>네비게이션바 구현-태블릿 디자인</title>
+<!-- 공통으로 사용하 수 있는 스타일 초기화 시작 -->
+<style type="text/css">
+	*{margin:0; padding:0;}
+	li{ 
+		list-style: none;
+		float: left;
+		padding: 2px 10px;
+		/* border:3px solid black; */
+		
+	}	
+	nav{ background-color: #b0c4de;
+	}
+	a{text-decoration: none;}
+	
+	.left{
+		margin-right: 100px;
+	
+	}
+	h1{
+	position: absolute;
+	top:1px;
+	}
+</style>
+<!-- 공통으로 사용하 수 있는 스타일 초기화 끝 -->
+<!-- main_header 영역 스타일 시작 -->
+<style type="text/css">
+	#main_header{
+		padding-left:10px;
+		border-bottom:1px solid black;
+		height:60px;
+		background-color: #008080;
+	}
+	
+	#main_gnb{
+		overflow: hidden;
+	}
+	#main_gnb>ul.left{
+		float:left;
+	}
+	#main_gnb>ul.left>li{
+		width:90px;
+		float:left;
+	}
+	#main_gnb>ul.right{
+		float:right;
+	}
+	#main_gnb>ul.right>li{
+		width:110px;
+		float:right;
+	}
+	/* 후손선택자 */
+	#main_gnb a{
+		color: black;
+		padding:10px 20px;
+		font-weight: bold;
+		border-left: 1px solid black;
+		border-right: 1px solid black;
+	}
+	</style>
+<!-- main_header 영역 스타일 끝 -->
+</head>
+<body>
+	<header id="main_header" >
+	<center><h1 >JAVA59기</h1></center>
+	</header>
+	<nav id="main_gnb">
+		<ul class="left">
+			<li><a href="#">java</a></li>
+			<li><a href="#">oracle</a></li>
+			<li><a href="#">html</a></li>
+		
+		</ul>
+		<ul class="right">
+			<li><a href="#">회원가입</a></li>
+			<li><a href="#">로그인</a></li>
+		</ul>
+	</nav>
+</body>
+</html>

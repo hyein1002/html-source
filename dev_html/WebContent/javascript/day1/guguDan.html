@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>구구단</title>
+</head>
+<body>
+<h3>구구단 출력 프로그램</h3>
+<script type="text/javascript">
+	var dap = new Array();//자바스크립트에도 배열이 있다.//new Array(5)-인덱스를 0부터 4까지 지정할 수 있다.
+	var dan = prompt("확인 하려는 구구단을 입력하세요.",2);//디폴트값은 2
+	for(var i=1;i<=9;i++){
+		//dap[i] = parseInt(dan)*i;//아래것과 이것 둘 다 결과값은 나옴
+		dap[i] = dan*i;
+		document.write(dan,"*",i,"는",dap[i],"<br>");//+대신 ,를 사용해서 이어줄수도있다.
+	}
+</script>
+</body>
+</html>

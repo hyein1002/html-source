@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>html은 순서가 있다.</title>
+<script type="text/javascript">
+	function confirm(){
+		//var v_msg = document.getElementById("d_msg");
+		//v_msg.innerText = "after v_msg:"+v_msg;//주소번지가 나온다.
+		v_msg.innerText="<font color='red'><h1>after</h1></font> v_msg:"+v_msg;
+		//v_msg.innerHTML="<font color='red'><h1>after</h1></font> v_msg:"+v_msg;
+	}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+//before, var는 변수에 담는것, 순서가 있다면 d_msg는 나오지 않는다. 선언을 뒤에했으니까=>순서가 있어서 d_msg에 null이 찍힌다.
+	//var v_msg = document.getElementById("d_msg");
+	//console.log("v_msg:"+v_msg);
+</script>
+<div id="d_msg">당신의 아이디를 입력하세요.[안내]</div>
+<script type="text/javascript">
+//after, var에 담긴 주소값이 콘솔에 나온다.
+	var v_msg = document.getElementById("d_msg");
+	//v_msg.innerText = "after v_msg:"+v_msg;//주소번지가 나온다.
+	console.log("v_msg:"+v_msg);
+</script>
+<button onclick="confirm()">확인</button>
+</body>
+</html>

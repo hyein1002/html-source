@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function checkAll(size){
+		if(document.f_rev2.i_checkAll2.checked==1){
+			for(var i=0;i<size;i++){
+				document.f_rev2.from2[i].checked=1;
+			}
+		}
+		else{
+			if(document.f_rev2.i_checkAll2.checked==0){
+				for(var i=0;i<size;i++){
+					document.f_rev2.from2[i].checked=0;
+				}
+			}
+		}
+	}
+</script>
+</head>
+<body>
+	<form name="f_rev2" method="get" action="#">
+	<table border="1">
+		<tr>
+			<th>
+				<input type="checkbox" name="i_checkAll2" onClick="checkAll(3)">
+			</th>
+			<th>no</th>
+			<th>보낸이</th>
+			<th>받는사람</th>
+		</tr>
+		
+				<tr>
+			<th>
+				<input type="checkbox" name="from2" value="from21">
+			</th>
+			<th>1</th>
+			<th>유재석</th>
+			<th>강호동</th>
+		</tr>
+		
+		<tr>
+			<th>
+				<input type="checkbox" name="from2" value="from22">
+			</th>
+			<th>2</th>
+			<th>유재석</th>
+			<th>강호동</th>
+		</tr>
+		
+		<tr>
+			<th>
+				<input type="checkbox" name="from2" value="from23">
+			</th>
+			<th>3</th>
+			<th>유재석</th>
+			<th>강호동</th>
+		</tr>
+	
+		<tr>
+			<th>
+				<input type="checkbox" name="from2" value="from24">
+			</th>
+			<th>4</th>
+			<th>유재석</th>
+			<th>강호동</th>
+		</tr>
+	</table>
+	</form>
+</body>
+</html>

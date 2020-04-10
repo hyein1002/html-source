@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 성적등급계산하기
+성적을 입력하세요.
+당신의 등급은 b입니다.
+ -->
+<script type="text/javascript">
+	var grade, score, result;
+	function grades(){
+		if(score>=90){
+			grade ="A";
+		}
+		else if(score>=80){
+			grade ="B";
+
+		}
+		else if(score>=70){
+			grade ="C";
+
+		}
+		else if(score>=40){
+			grade ="D";
+
+		}else{
+			grade="F";
+		}
+	}
+</script>
+</head>
+<body>
+<script type="text/javascript">
+	score = prompt("당신의 성적을 입력하세요.");
+	grades();
+	result = confirm("당신의 등급은 "+grade +"입니다.")
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>TableTest.html과 비교[Jquery사용본]</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	function account(pstart,pend){
+		alert(pstart+","+pend);
+	}
+</script>
+</head>
+<body>
+<!-- 
+document 내장객체는 tableTest.html을 가리킨다.
+자바코드영역
+자바스크립트영역
+CSS코드 영역
+html코드 영역
+ -->
+<script type="text/javascript">
+
+</script>
+<form id="f_gugudan">
+구구단보기:
+시작단: <input type = "text" size="4" id ="txtStart" name="txtStart"/>
+ 끝 단: <input type = "text" size="4" id="txtEnd" name="txtEnd"/>
+<button onclick="account($('#txtStart').val(),$('#txtEnd').val())">구구단 보기</button>
+</form>
+</body>
+</html>

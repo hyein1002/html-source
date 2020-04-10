@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function account(){
+		var pstart = document.getElementById('nstart').value;
+		var pend = document.getElementById('nend').value;
+		document.write("<table><thead bgcolor='yellow'>");
+		for(var i=pstart;i<=pend;i++){
+		document.write("<td>"+i+"단"+"</td>");
+		}
+		document.write("</thead>");
+		for(var j=1;j<=9;j++){
+		document.write("<tr>");
+			for(var i=pstart;i<=pend;i++){
+				document.write("<td>"+i+"x"+j+"="+i*j+"</td>");
+			}
+		document.write("</tr>");
+		}
+		document.write("</table>");
+	}
+</script>
+</head>
+시작단: <input id="nstart"/>
+끝단: <input id="nend"/>
+<button onclick="javascript:account()">출력</button>
+</body>
+</html>

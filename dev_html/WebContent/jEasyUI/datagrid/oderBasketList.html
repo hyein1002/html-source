@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>OrderBasketList</title>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+
+</head>
+<body>
+<script type="text/javascript">
+	var otitle = "<h1>"+"물품관리목록"+"</h1>";
+	document.write(otitle);
+</script>
+<table id="order" class="easyui-datagrid"></table>
+<script type="text/javascript">
+
+	$("#order").datagrid({
+	
+		url:'./jsonOrderList.jsp',
+		columns:[[
+			{field:"gubun_vc", title:"분류", width:200, align:'center'},
+			{field:"name_vc", title:"품목", width:200, align:'center'},
+			{field:"price_nu", title:"가격", width:200, align:'center'}
+		]]
+		
+		
+	});
+
+</script>
+</body>
+</html>

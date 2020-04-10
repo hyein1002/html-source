@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function account(){
+		var start = document.getElementById("start").value;
+		var end = document.getElementById("end").value;
+			document.write("<table border='1' width='450'>");
+		for(var i=Number(start);i<=Number(end);i++){
+			document.write("<td>");
+			document.write(i+"단");
+			document.write("</td>");
+			}
+		for(var i=Number(start);i<=Number(end);i++){
+		for(var j = 1;j<10;j++){
+			document.write("<tr><td>");
+				document.write(i+"x"+j+"="+i*j+"<br>");
+			}
+		document.write("</td></tr>");
+		}
+		document.write("</table>");
+	}
+</script>
+</head>
+<body>
+<!-- 
+document 내장객체는 tableTest.html을 가리킨다.
+자바코드영역
+자바스크립트영역
+CSS코드 영역
+html코드 영역
+ -->
+<script type="text/javascript">
+
+</script>
+시작단:
+<input id ="start"></input>
+출력단:
+<input id ="end"></input>
+<button onclick="account()">출력</button>
+</body>
+</html>

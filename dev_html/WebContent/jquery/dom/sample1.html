@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ready demo</title>
+  <style>
+  p {
+    color: red;
+  }
+  div {
+    color: blue;
+  }
+  #d_test{
+  	color:pink;
+  	}
+  </style>
+  <!--이 스크립트가 있으면 jquery를 $로 대신할수있다. -->
+  <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+  <script>
+ 
+ $(function() {
+    $( "p" ).text( "The DOM is now loaded and can be manipulated." );
+  }); 
+/*   $(function() {
+    $( "div" ).text( "The DOM is now loaded and can be manipulated." );
+  }); */
+ 
+  </script>
+ 
+</head>
+<body>
+ 
+<div>Not loaded yet.</div>
+<div id="d_test">Hello World</div>
+ 
+ 
+</body>
+</html>

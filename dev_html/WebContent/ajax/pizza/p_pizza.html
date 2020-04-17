@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	function getNumber(){
+		var u_tel = $("#mem_tel").val();
+		//alert(u_tel);
+		$.ajax({
+			method:'post'
+			,url:'p_customerInfo.jsp'
+			,success:function(result){
+				var cus = JSON.stringify(result);
+				var acus = JSON.parse(cus);
+				var temp = "";
+				for(var i=0;i<acus.length;i++){
+				if(u_tel==acus[i].mem_tel){
+					temp += acus[i].mem_addr;
+				}
+					
+				}
+					$("#mem_addr").text(temp);
+			}
+		});
+	}
+</script>
+</head>
+<body>
+	<p>
+		<img src="breakneck-logo.gif" alt="Break Neck Pizza"/>
+	</p>
+	<p>
+		tel:
+		<input type="text" size="15" id="mem_tel" name="mem_tel" onchange="getNumber()"/>
+	</p>
+	<p>addr: </p>
+	<p>
+		<textarea name="mem_addr" id="mem_addr" rows="4" cols="50"></textarea>
+	</p>
+</body>
+</html>

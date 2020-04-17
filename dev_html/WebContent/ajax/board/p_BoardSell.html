@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	td{
+		border : 1px dotted pink;
+	}
+	table{
+		width : 300px;
+		height : 80px;
+		align : center;
+		text-align:center;
+		margin-left:auto;
+		margin-right:auto;
+	}
+	th{
+		background-color:orange;
+	}
+	body{
+		text-align:center;
+		
+	}
+</style>
+<script type="text/javascript">
+	var xhrObject = null;
+	function createRequest(){
+		try {
+			xhrObject = new XMLHttpRequest();
+		} catch (e) {
+			// TODO: handle exception
+		}
+	}
+	function get(){
+		createRequest();
+		var url = "boardAction.jsp";
+		xhrObject.open("get",url,true);
+		xhrObject.onreadystatechange=get_process;
+		xhrObject.send(null);
+	}
+	function get_process(){
+	//alert(xhrObject.readyState);
+	if(xhrObject.readyState==4){
+		var newQty = xhrObject.responseText;
+		//alert(newQty);
+		var qtyEl = document.getElementById("qty");
+		var qtyval = qtyEl.value;
+		alert("qtyval"+qtyval);
+	}
+	}
+	function getText(el){
+		var text ="";
+		if(el!=null){
+			
+		}
+	}
+</script>
+</head>
+<body>
+<h2>[보드 판매량에 따른 마진]</h2>
+<table border="1px">
+	<tr>
+		<th>보드판매량</th>
+		<td><span id="qty">0</span>개</td>
+	</tr>
+	<tr>
+		<th>구매가</th>
+		<td><span id="cost">1000</span>원</td>
+	</tr>
+	<tr>
+		<th>소비자가</th>
+		<td><span id="price">1500</span>원</td>
+	</tr>
+</table>
+<h2>마진금액:<span id="cash">0</span>원</h2>
+<button onclick="get()">조회</button>
+</body>
+</html>

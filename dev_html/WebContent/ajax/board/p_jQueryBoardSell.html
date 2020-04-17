@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<style type="text/css">
+	body{
+		text-align:center;
+	}
+	table{
+		border:1px solid black;
+		text-align:center;
+		
+		
+	}
+	td,th{
+		border:1px dotted gray;
+		text-align:center;
+	}
+	th{
+		background-color:pink;
+	}
+</style>
+<script type="text/javascript">
+	function get(){
+		//alert("마진");
+		$.ajax({
+			url:"boardAction.jsp"
+			,dataType:"text"
+			,success:function(data){
+				alert(data);
+				$("#qty").text(data);
+				var qtyval = $("#qty").text();
+				var costval = $("#cose").text();
+				var priceval = $("#price").text();
+				$("#cash").text((priceval-costval)*qtyval);
+			}
+		});
+	}
+</script>
+</head>
+<body>
+<h2>아작스 보드 판매량</h2>
+<table width="300px" height="80px" align="center">
+	<tr>
+		<th width="120px">보드판매량</th>
+		<td width="180px"><span id="qty">0</span>개</td>
+	</tr>
+	<tr>
+		<th width="120px">구매가</th>
+		<td width="180px"><span id="cost">1000</span>개</td>
+	</tr>
+	<tr>
+		<th width="120px">소비자가</th>
+		<td width="180px"><span id="price">2000</span>개</td>
+	</tr>
+</table>
+<h2>마진금액 : <span id="cash">0</span>원</h2>
+<button onclick="get()">마진조회 </button>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!-- java에서 method같은 느낌. 불러와야 실행됨 -->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>피자 주문 실습 - ajax활용</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	function getCunstomerInfo(){
+		//사용자가 입력한 전화번호 얻어오기
+		var u_tel = $("#mem_tel").val();
+		//alert(u_tel);
+		$.ajax({
+			method:"post"
+			,url:"customerInfo.jsp"
+			,success:function(result){
+				var res = JSON.stringify(result);
+				var resDoc = JSON.parse(res);//배열로 전환
+				var temp = "";
+				for(var i=0;i<resDoc.length;i++){
+					if(u_tel==resDoc[i].mem_tel){
+						temp +=resDoc[i].mem_addr;
+					}
+				}
+				$("#mem_addr").text(temp);
+			}
+		});
+		
+	}
+</script>
+</head>
+<body>
+	<p>
+		<img src="breakneck-logo.gif" alt="Break Neck Pizza"/>
+	</p>
+	<p>
+		Enter your phone number : 
+		<input type="text" size="15" id="mem_tel" name="mem_tel" onchange="getCunstomerInfo()"/>
+	</p>
+	<p>Your order will be delivered to:</p>
+	<p>
+		<textarea name="mem_addr" id="mem_addr" rows="4" cols="50"></textarea>
+	</p>
+</body>
+</html>

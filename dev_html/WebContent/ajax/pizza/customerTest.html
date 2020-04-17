@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+</head>
+<body>
+<div id="d_info"></div>
+<script type="text/javascript">
+//ready함수를 사용하지 않고 있다.
+//ready함수를 사용할 때와 사용하지 않았을 때 차이점에 대해 말할 수 있다.
+	$.ajax({
+		url:'customerInfo.jsp'
+		,method:'get'
+		//or 'post' => data속성을 같이 사용해야 함. 전송방식(사용자가 서버에게-요청,서버가 사용자에게-응답)
+		,dataType:'json'
+		,success:function(result){
+			//fetch함수로 처리시에는 result.trim()처리를 꼭 해야함, 그래서 공백문자를 제거한다.
+			var res = JSON.stringify(result);
+			//$("#d_info").text(res);
+			var resDoc = JSON.parse(res);//배열로 전환
+			for(var i=0;i<resDoc.length;i++){
+				alert(resDoc[i].mem_tel);
+				if("025559990"==resDoc[i].mem_tel){
+					alert(resDoc[i].mem_addr);
+				}
+				else if("025559991"==resDoc[i].mem_tel){
+					alert(resDoc[i].mem_addr);
+				}
+				else if("025559992"==resDoc[i].mem_tel){
+					alert(resDoc[i].mem_addr);
+				}
+			}
+		}
+		
+	});
+</script>
+</body>
+</html>

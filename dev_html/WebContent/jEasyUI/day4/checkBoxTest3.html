@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+</head>
+<body>
+<table id="dg_test">
+</table>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$("#dg_test").datagrid({
+			title:'체크박스[js만으로]'
+			,url:'empData.jsp'
+			,width:'800'
+			//checkbox_data.json 대신 select문을 통해서 가져온 정보로 체크박스 초기화해보기
+			,columns:[[
+				{field:'ck', checkbox:true}
+				,{field:'empno', align:'center',editor:'text',title:'empno' }
+				,{field:'ename', align:'center',editor:'text',title:'ename' }
+				,{field:'job', align:'center',editor:'text',title:'job' }
+				,{field:'mgr', align:'center',editor:'text',title:'mgr' }
+				,{field:'hiredate', align:'center',editor:'text',title:'hiredate' }
+				,{field:'sal', align:'center',editor:'text',title:'sal' }
+				,{field:'comm', align:'center',editor:'text' ,title:'comm'}
+				,{field:'deptno', align:'center',editor:'text',title:'deptno' }
+			]]
+		});		
+	});
+</script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+	function newsLoad(){
+		//alert("호출");
+		$.ajax({
+			url:'p_newsData.jsp'
+			,success:function(title){
+				$("#newstitle").html(title);
+			}
+		});
+	}
+</script>
+</head>
+<body>
+<span>오늘의 주요뉴스 ></span><span id="newstitle">오늘의데이터</span>
+<script type="text/javascript">
+	$(document).ready(function(){
+		function start(){
+			setInterval(newsLoad,3000);
+		}
+		start();
+	});
+</script>
+</body>
+</html>

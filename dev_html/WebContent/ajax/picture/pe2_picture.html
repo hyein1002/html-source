@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+	table{
+		border:1px dotted gray;
+		padding:20px;
+	}
+</style>
+<script type="text/javascript">
+	function over(td){
+		//alert("over");
+		var u_pic = $(td).attr("id");
+		$.ajax({
+			method:'post'
+			,url:'p2_pictureInfo.jsp'
+			,data:'id='+u_pic
+			,success:function(name){
+				$("#here").css("left",$(td).offset().left+140+"px");
+				$("#here").html(name);
+			}
+		});
+	}
+	function out(name){
+		//alert("out");
+		$("#here").html("");
+	}
+</script>
+</head>
+<body>
+<table>
+	<tr>
+	<th colspan="2">그림소개</th>
+	</tr>
+	<tr>
+	<td><img src="picture1.jpg"/></td>
+	<td id="picture1.jpg" onmouseover="over(this)" onmouseout="out()">추상화1</td>
+	</tr>
+	<tr>
+	<td><img src="picture2.jpg"/></td>
+	<td id="picture2.jpg" onmouseover="over(this)" onmouseout="out()">추상화2</td>
+	</tr>
+	<tr>
+	<td><img src="picture3.jpg"/></td>
+	<td id="picture3.jpg" onmouseover="over(this)" onmouseout="out()">추상화3</td>
+	</tr>
+	<tr>
+	<td><img src="picture4.jpg"/></td>
+	<td id="picture4.jpg" onmouseover="over(this)" onmouseout="out()">추상화4</td>
+	</tr>
+</table>
+<div id="here"></div>
+
+</body>
+</html>

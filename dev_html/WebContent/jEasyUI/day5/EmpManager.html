@@ -16,8 +16,8 @@
 		$("#dg").datagrid({
 			url:"jsonEmpList.jsp"
 			,onLoadSuccess: function(data){
-				alert("새로고침 처리 성공"+JSON.stringify(data));
-				alert("새로고침 처리 성공"+data);
+				//alert("새로고침 처리 성공"+JSON.stringify(data));
+				//alert("새로고침 처리 성공"+data);
 			}
 		});
 	}
@@ -40,10 +40,10 @@
         </thead>
     </table>
     <div id="toolbar">
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="empList()">조회</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-add" plain="true" onclick="newUser()">New User</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">Edit User</a>
-        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">Remove User</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-search" plain="true" onclick="empList()">사원조회</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-man" plain="true" onclick="newUser()">사원등록</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-edit" plain="true" onclick="editUser()">사원수정</a>
+        <a href="javascript:void(0)" class="easyui-linkbutton" iconCls="icon-remove" plain="true" onclick="destroyUser()">사원삭제</a>
     </div>
 </body>
 </html>

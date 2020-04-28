@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/default/easyui.css">
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/icon.css">
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/themes/color.css">
+<link rel="stylesheet" type="text/css" href="https://www.jeasyui.com/easyui/demo/demo.css">
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="https://www.jeasyui.com/easyui/jquery.easyui.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<style type="text/css">
+	#d_emp1{
+		background:#CCAAAA;
+		border:1px dotted balck;
+	}
+	#d_emp2{
+		background:#CCCAAA;
+		border:1px dotted balck;
+	}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function empList(){
+			$.ajax({
+				url:"htmlEmpList.jsp"
+				,success: function(data){
+					$("#d_emp1").text(data);
+					$("#d_emp2").html(data);
+				}
+			});
+		}
+		empList();
+	</script>
+   <div id="d_emp1"></div>
+   <div id="d_emp2"></div>
+</body>
+</html>

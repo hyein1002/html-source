@@ -4,6 +4,11 @@
 	<select id="currentTime" parameterType="map" resultType="java.util.Map"> 
 	select to_char(sysdate,'HH24:MI;SS') from dual 
 	 </select>
+	<select id="deptList" parameterType="map" resultType="java.util.Map"> 
+	select deptno, dname from dept
+	 
+	 </select>
+	 
 
 </mapper> 
  

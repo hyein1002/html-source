@@ -37,6 +37,22 @@ public class SqlMapEmpDao {
 		}
 		return eList;
 	}
+	public int emp_ins(Map<String,Object> pMap) {
+		int result = 0;
+		String resource = "orm/mybatis/Configuration.xml"; 
+		
+		try {
+			Reader reader = Resources.getResourceAsReader(resource);
+			SqlSessionFactory sqlMapper = new SqlSessionFactoryBuilder().build(reader);
+			SqlSession sqlSes = sqlMapper.openSession();
+			result = sqlSes.insert("emp_ins",pMap);
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return result;
+		
+	}
 	public static void main(String[] args) {
 		SqlMapEmpDao s = new SqlMapEmpDao();
 		s.empList(null);
